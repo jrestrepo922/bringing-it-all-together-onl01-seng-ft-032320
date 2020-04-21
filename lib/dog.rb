@@ -64,7 +64,9 @@ class Dog
     SELECT * FROM dogs WHERE name = ?
     SQL
 
-    row = DB[:conn].execute(sql, name)
+    row = DB[:conn].execute(sql, name).collect{ |row|
+      self.new_from_db(row)
+    }.first
 
   end
 
@@ -73,6 +75,7 @@ class Dog
     dog.save
     dog
   end
+
 
 
 end
