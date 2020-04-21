@@ -29,5 +29,13 @@ class Dog
     DB[:conn].execute(sql)
   end
 
+  def self.new_from_db(row)
+    binding.pry
+    dog = Dog.new(name:row[1])
+  end
+
+
+
+
 
 end
