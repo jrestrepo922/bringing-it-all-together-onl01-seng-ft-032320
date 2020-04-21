@@ -79,8 +79,5 @@ class Dog
     binding.pry
   end
 
-  def
-
-  end
 
 end
