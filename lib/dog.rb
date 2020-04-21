@@ -41,8 +41,8 @@ class Dog
     SQL
 
     what_is_this = DB[:conn].execute(sql, self.name, self.breed, self.id)
-    Binding.pry 
-    
+    Binding.pry
+
   end
 
   def save
