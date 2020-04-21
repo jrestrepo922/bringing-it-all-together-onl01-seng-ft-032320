@@ -76,7 +76,6 @@ class Dog
     dog = Dog.new(hash_of_attributes)
     dog.save
     dog
-    binding.pry
   end
 
 
