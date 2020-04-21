@@ -82,7 +82,7 @@ class Dog
     sql = <<-SQL
     SELECT * FROM dogs WHERE id = ?
     SQL
-
+S
     row = DB[:conn].execute(sql, id).collect{ |row|
       self.new_from_db(row)
     }.first
@@ -94,5 +94,6 @@ class Dog
     binding.pry
     if
     end
-  end
+  endS
+  
 end
