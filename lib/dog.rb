@@ -25,7 +25,7 @@ class Dog
 
   def self.drop_table
     sql = <<-SQL
-    DROP TABLE IF EXISTS dogs;
+      DROP TABLE IF EXISTS dogs;
     SQL
 
     DB[:conn].execute(sql)
@@ -35,13 +35,28 @@ class Dog
     dog = Dog.new(name:row[1], breed:row[2], id:row[0])
   end
 
+  def update
+    sql = <<-SQL
+      UPDATE dogs SET name = ?, breed = ? WHERE id = ? ;
+    SQL
+
+    DB[:conn].execute(sql, self.name, self.breed, self.id)
+  end
+
+  def save
+    if self.id
+      self.update
+    else
+
+    end
+  end
+
   def self.find_by_name(name)
     sql = <<-SQL
     SELECT * FROM dogs WHERE name = ?
     SQL
 
     row = DB[:conn].execute(sql, name)
-    binding.pry
   end
 
 
