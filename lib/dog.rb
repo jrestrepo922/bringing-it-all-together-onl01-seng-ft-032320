@@ -76,11 +76,11 @@ class Dog
     dog = Dog.new(hash_of_attributes)
     dog.save
     dog
-    binding.pry 
+    binding.pry
   end
 
-  def 
+  def
 
-  end 
+  end
 
 end
